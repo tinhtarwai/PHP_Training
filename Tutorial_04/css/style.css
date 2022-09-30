@@ -1,0 +1,31 @@
+.logout {
+  padding: 3px 10px;
+  border: 1px solid black;
+  background-color: #b7b6b4;
+  text-decoration: none;
+  border-radius: 3px;
+  color: #000;
+}
+
+form {
+  background-color: #f2efeb;
+  width: 20%;
+  margin: 20px;
+  padding: 30px;
+}
+
+.login {
+ background-color: #bfb8b8;
+}
+
+.message {
+  background-color: #ffe4c4;
+  padding: 10px;
+  width: 50%;
+}
+
+.warn {
+    background-color: #f57708;
+    padding: 10px;
+    width: 50%;
+}

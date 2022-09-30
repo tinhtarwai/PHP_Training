@@ -3,6 +3,6 @@
    unset($_SESSION["name"]);
    unset($_SESSION["pass"]);
    
-   echo 'You have cleaned session';
-   header('Refresh: 1; URL = login.php');
+   echo '<h3>Logout Successful!</h3>';
+   header('Refresh: 1; URL = index.php');
 ?>
