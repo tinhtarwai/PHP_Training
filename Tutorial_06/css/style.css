@@ -1,0 +1,29 @@
+form {
+  width: 30%;
+  margin: 0 auto;
+  margin-top: 50px;
+  padding: 20px;
+  border: 1px dotted #000000;
+  background-color: #f5f5dc;
+  border-radius: 5px;
+}
+
+label {
+  color: #131212;
+  font-size: 15px;
+  font-weight: bold;
+  font-style: italic;
+}
+
+input {
+  margin-bottom: 30px;
+  background-color: #f9e9d6;
+}
+
+.upload {
+  margin-bottom: 5px;
+  padding: 5px 10px;
+  border: 0.5px solid #6b6a6a;
+  background-color: #e9e3e3;
+  border-radius: 5px;
+}
