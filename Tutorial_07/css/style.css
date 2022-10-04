@@ -1,0 +1,31 @@
+form {
+    width: 25%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #d2b385;
+    text-align: center;
+    margin-top: 50px;
+    border: 0.5px dotted #000000;
+    border-radius: 10px;
+}
+
+input {
+    margin: 10px;
+    padding: 5px;
+}
+
+.btn {
+    border-radius: 5px;
+    background-color: #575655;
+    border: 0.2px solid #474646;
+    color: #fff;
+}
+
+.warning {
+    margin: 20px 150px;
+    padding: 20px;
+    background-color: #f79a1f;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+}
