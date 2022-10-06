@@ -42,8 +42,8 @@
     </script>
   </head>
   <body>
-    <center><h3>Description For Company's Performance Status</h3</center><br><br>
-    <div id="chart_div" style="width: 100%; height: 500px;"></div>
-    <button  class="cmn-btn back"><a href="index.php"> Go to List >>></a></button>
+        <center><h3>Description For Company's Performance Status</h3</center><br><br>
+        <div id="chart_div" style="width: 100%; height: 500px;"></div>
+        <button  class="cmn-btn back"><a href="index.php"> Go to List >>></a></button>
   </body>
 </html>
