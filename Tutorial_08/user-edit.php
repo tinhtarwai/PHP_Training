@@ -40,8 +40,8 @@
         <input type="text" name="age" class="input" value = <?php echo $age; ?>><br><br>
         
         <label for="gender">Gender</label> &nbsp;&nbsp;&nbsp;
-        <input type="radio" name="gender" value = <?php echo "$gender"; ?>>Male
-        <input type="radio" name="gender" value = <?php echo "$gender"; ?>>Female<br><br>
+        <input type="radio" name="gender" value = "male">Male
+        <input type="radio" name="gender" value = "female">Female<br><br>
         
         <label for="phone">Phone No</label><br>
         <input type="text" name="phone" class="input" value = <?php echo $phone; ?>><br><br>
