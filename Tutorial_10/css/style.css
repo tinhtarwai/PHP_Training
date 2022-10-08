@@ -1,0 +1,36 @@
+form {
+  width: 25%;
+  margin: 0 auto;
+  margin-top: 100px;
+  padding: 20px;
+  border: 0.2px dotted #5e4b4b;
+  background-color: #ec8a12;
+  border-radius: 5px;
+}
+
+.input {
+  width: 80%;
+  padding: 5px;
+  background-color: #fbefef;
+}
+
+.cmn-btn {
+  padding: 3px 10px;
+  border: 0.1px solid #333;
+  background-color: rgb(173, 170, 170);
+  border-radius: 5px;
+}
+
+a {
+  color: #3020aa;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  font-style: italic;
+}
+
+.welcome {
+  margin-top: 100px;
+  /*margin: 0 auto;*/
+  text-align: center;
+}
