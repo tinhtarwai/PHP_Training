@@ -11,22 +11,22 @@
     <table cellspacing="0px">
     <?php
         for($row = 1; $row < 9; $row++) {
-    ?>
-      <tr>
-        <?php
-          for($col = 1; $col < 9; $col++) {
-            $sum = $row + $col;
-            if($sum%2==0) {
-              echo "<td class=white-cell></td>";
-            } else {
-              echo "<td class=black-cell></td>";
-            }
-          }
         ?>
-      </tr>
-    <?php
-        }
-    ?>
+        <tr>
+            <?php
+            for($col = 1; $col < 9; $col++) {
+                $sum = $row + $col;
+                if($sum%2==0) {
+                    echo "<td class=white-cell></td>";
+                } else {
+                echo "<td class=black-cell></td>";
+                }
+            }
+            ?>
+        </tr>
+        <?php
+            }
+        ?>
     </table>
 </body>
 </html>
