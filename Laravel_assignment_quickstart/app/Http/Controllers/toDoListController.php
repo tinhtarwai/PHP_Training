@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
@@ -15,6 +14,7 @@ class toDoListController extends BaseController
             'tasks' => $tasks
         ]);
     }
+    
     public function store(request $request) {
         $validator = Validator::make($request->all(), [
             'name' => 'required|max:255',
