@@ -6,7 +6,6 @@
                 <div class="panel-heading">
                     New Task
                 </div>
-
                 <div class="panel-body">
                     <!-- Display Validation Errors -->
                     @include('common.errors')
@@ -23,7 +22,6 @@
                                 <input type="text" name="name" id="task-name" class="form-control" value="{{ old('task') }}">
                             </div>
                         </div>
-
                         <!-- Add Task Button -->
                         <div class="form-group">
                             <div class="col-sm-offset-3 col-sm-6">
@@ -35,14 +33,12 @@
                     </form>
                 </div>
             </div>
-
             <!-- Current Tasks -->
             @if (count($tasks) > 0)
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         Current Tasks
                     </div>
-
                     <div class="panel-body">
                         <table class="table table-striped task-table">
                             <thead>

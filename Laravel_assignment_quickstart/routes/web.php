@@ -1,74 +1,21 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
 use Illuminate\Http\Request;
-use App\Http\Controllers\toDoListController;
-
- 
-/**
- * Display All Tasks
- */
-//Route::get('/', function () {
-//    $tasks = Task::orderBy('created_at', 'asc')->get();
-//    return view('tasks', [
-//        'tasks' => $tasks
-//    ]);
-//});
- 
-/**
- * Add A New Task
- */
-// Route::post('/task', function (Request $request) {
-//    $validator = Validator::make($request->all(), [
-//        'name' => 'required|max:255',
-//    ]);
-//     
-//    if ($validator->fails()) {
-//        return redirect('/')
-//            ->withInput()
-//            ->withErrors($validator);
-//    }
-//     
-//    $task = new Task;
-//    $task->name = $request->name;
-//    $task->save();
-//     
-//    return redirect('/');
-//});
- 
-/**
- * Delete An Existing Task
- */
-//Route::delete('/task/{id}', function ($id) {
-//    Task::findOrFail($id)->delete();
-// 
-//    return redirect('/');
-//});
-
-
-
-
-
-
+use App\Http\Controllers\ToDoListController;
 
 /**
  * Display All Tasks
  */
-
-Route::get('/', [toDoListController::class, 'index']);
-
+Route::get('/', [ToDoListController::class, 'index']);
 
 /**
  * Add A New Task
  */
-
-Route::post('/task', [toDoListController::class, 'store']);
-
+Route::post('/task', [ToDoListController::class, 'store']);
 
 /**
  * Delete An Existing Task
  */
-
-Route::delete('/task/{id}', [toDoListController::class, 'delete']);
+Route::delete('/task/{id}', [ToDoListController::class, 'delete']);
 
