@@ -25,7 +25,7 @@ class StudentDao implements StudentDaoInterface
     public function showStudents() {
         $studentsList = DB::table('students')
                         ->join('majors', 'majors.id', '=', 'students.major_id')
-                        ->select('students.id','students.name', 'students.father_name','students.gender','students.dob','students.address','majors.major_name')
+                        ->select('students.id', 'students.name', 'students.father_name', 'students.gender', 'students.dob', 'students.address', 'majors.major_name', 'students.created_at')
                         ->orderby('students.id')
                         ->paginate(6);
         return $studentsList;
@@ -86,7 +86,8 @@ class StudentDao implements StudentDaoInterface
                                         DB::raw('std.gender as gender'),
                                         DB::raw('std.dob as dob'),
                                         DB::raw('std.address as address'),
-                                        DB::raw('mj.major_name as major_name')
+                                        DB::raw('mj.major_name as major_name'),
+                                        DB::raw('std.created_at as created_at')
                                     )
                                     ->orderby('std.id')
                                     ->where('std.name', 'LIKE', '%'.$request->findname.'%')
@@ -102,7 +103,8 @@ class StudentDao implements StudentDaoInterface
                                         DB::raw('std.gender as gender'),
                                         DB::raw('std.dob as dob'),
                                         DB::raw('std.address as address'),
-                                        DB::raw('mj.major_name as major_name')
+                                        DB::raw('mj.major_name as major_name'),
+                                        DB::raw('std.created_at as created_at')
                                     )
                                     ->orderby('std.id')
                                     ->where('std.address', 'LIKE', '%'.$request->findaddress.'%')
@@ -118,7 +120,8 @@ class StudentDao implements StudentDaoInterface
                                         DB::raw('std.gender as gender'),
                                         DB::raw('std.dob as dob'),
                                         DB::raw('std.address as address'),
-                                        DB::raw('mj.major_name as major_name')
+                                        DB::raw('mj.major_name as major_name'),
+                                        DB::raw('std.created_at as created_at')
                                     )
                                     ->orderby('std.id')
                                     ->whereYear('std.created_at', '>=', $start)
@@ -134,7 +137,8 @@ class StudentDao implements StudentDaoInterface
                                         DB::raw('std.gender as gender'),
                                         DB::raw('std.dob as dob'),
                                         DB::raw('std.address as address'),
-                                        DB::raw('mj.major_name as major_name')
+                                        DB::raw('mj.major_name as major_name'),
+                                        DB::raw('std.created_at as created_at')
                                     )              
                                     ->orderby('std.id')
                                     ->whereYear('std.created_at', '<=', $end)
@@ -151,7 +155,8 @@ class StudentDao implements StudentDaoInterface
                                         DB::raw('std.gender as gender'),
                                         DB::raw('std.dob as dob'),
                                         DB::raw('std.address as address'),
-                                        DB::raw('mj.major_name as major_name')
+                                        DB::raw('mj.major_name as major_name'),
+                                        DB::raw('std.created_at as created_at')
                                     )
                                     ->orderby('std.id')
                                     ->where('std.name', 'LIKE', '%'.$request->findname.'%')
@@ -168,7 +173,8 @@ class StudentDao implements StudentDaoInterface
                                         DB::raw('std.gender as gender'),
                                         DB::raw('std.dob as dob'),
                                         DB::raw('std.address as address'),
-                                        DB::raw('mj.major_name as major_name')
+                                        DB::raw('mj.major_name as major_name'),
+                                        DB::raw('std.created_at as created_at')
                                     )
                                     ->orderby('std.id')
                                     ->where('std.name', 'LIKE', '%'.$request->findname.'%')
@@ -185,7 +191,8 @@ class StudentDao implements StudentDaoInterface
                                         DB::raw('std.gender as gender'),
                                         DB::raw('std.dob as dob'),
                                         DB::raw('std.address as address'),
-                                        DB::raw('mj.major_name as major_name')
+                                        DB::raw('mj.major_name as major_name'),
+                                        DB::raw('std.created_at as created_at')
                                     )
                                     ->orderby('std.id')
                                     ->where('std.name', 'LIKE', '%'.$request->findname.'%')
@@ -202,7 +209,8 @@ class StudentDao implements StudentDaoInterface
                                         DB::raw('std.gender as gender'),
                                         DB::raw('std.dob as dob'),
                                         DB::raw('std.address as address'),
-                                        DB::raw('mj.major_name as major_name')
+                                        DB::raw('mj.major_name as major_name'),
+                                        DB::raw('std.created_at as created_at')
                                     )
                                     ->orderby('std.id')
                                     ->whereYear('std.created_at', '>=', $start)
@@ -219,7 +227,8 @@ class StudentDao implements StudentDaoInterface
                                         DB::raw('std.gender as gender'),
                                         DB::raw('std.dob as dob'),
                                         DB::raw('std.address as address'),
-                                        DB::raw('mj.major_name as major_name')
+                                        DB::raw('mj.major_name as major_name'),
+                                        DB::raw('std.created_at as created_at')
                                         )
                                     ->orderby('std.id')
                                     ->where('std.address', 'LIKE', '%'.$request->findaddress.'%')
@@ -236,7 +245,8 @@ class StudentDao implements StudentDaoInterface
                                         DB::raw('std.gender as gender'),
                                         DB::raw('std.dob as dob'),
                                         DB::raw('std.address as address'),
-                                        DB::raw('mj.major_name as major_name')
+                                        DB::raw('mj.major_name as major_name'),
+                                        DB::raw('std.created_at as created_at')
                                     )
                                     ->orderby('std.id')
                                     ->where('std.address', 'LIKE', '%'.$request->findaddress.'%')
@@ -253,7 +263,8 @@ class StudentDao implements StudentDaoInterface
                                         DB::raw('std.gender as gender'),
                                         DB::raw('std.dob as dob'),
                                         DB::raw('std.address as address'),
-                                        DB::raw('mj.major_name as major_name')
+                                        DB::raw('mj.major_name as major_name'),
+                                        DB::raw('std.created_at as created_at')
                                     )
                                     ->orderby('std.id')
                                     ->where('std.name', 'LIKE', '%'.$request->findname.'%')
@@ -271,7 +282,8 @@ class StudentDao implements StudentDaoInterface
                                             DB::raw('std.gender as gender'),
                                             DB::raw('std.dob as dob'),
                                             DB::raw('std.address as address'),
-                                            DB::raw('mj.major_name as major_name')
+                                            DB::raw('mj.major_name as major_name'),
+                                            DB::raw('std.created_at as created_at')
                                         )
                                         ->orderby('std.id')
                                         ->where('std.name', 'LIKE', '%'.$request->findname.'%')
@@ -289,7 +301,8 @@ class StudentDao implements StudentDaoInterface
                                             DB::raw('std.gender as gender'),
                                             DB::raw('std.dob as dob'),
                                             DB::raw('std.address as address'),
-                                            DB::raw('mj.major_name as major_name')
+                                            DB::raw('mj.major_name as major_name'),
+                                            DB::raw('std.created_at as created_at')
                                         )
                                         ->orderby('std.id')
                                         ->where('std.name', 'LIKE', '%'.$request->findname.'%')
@@ -307,7 +320,8 @@ class StudentDao implements StudentDaoInterface
                                             DB::raw('std.gender as gender'),
                                             DB::raw('std.dob as dob'),
                                             DB::raw('std.address as address'),
-                                            DB::raw('mj.major_name as major_name')
+                                            DB::raw('mj.major_name as major_name'),
+                                            DB::raw('std.created_at as created_at')
                                         )
                                         ->orderby('std.id')
                                         ->where('std.address', 'LIKE', '%'.$request->findaddress.'%')
@@ -325,7 +339,8 @@ class StudentDao implements StudentDaoInterface
                                             DB::raw('std.gender as gender'),
                                             DB::raw('std.dob as dob'),
                                             DB::raw('std.address as address'),
-                                            DB::raw('mj.major_name as major_name')
+                                            DB::raw('mj.major_name as major_name'),
+                                            DB::raw('std.created_at as created_at')
                                         )
                                         ->orderby('std.id')
                                         ->where('std.name', 'LIKE', '%'.$request->findname.'%')

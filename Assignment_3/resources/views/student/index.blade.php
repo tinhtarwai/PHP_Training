@@ -16,16 +16,8 @@
       <div class="col-md-1"></div>
       <div class="col-md-10">
         <br>
-        <a href="{{url('/create')}}">
-          <button  class="btn btn-primary btn-sm mb-3 mr-5">
-            <i class="fa fa-plus"></i>Add
-          </button>
-        </a>
-        <a href="{{url('/export')}}">
-          <button  class="btn btn-secondary btn-sm mb-3">
-            <i class="fa fa-download"></i>Download
-          </button>
-        </a>               
+       
+                    
         <form action="{{url('/import')}}" method= "post" enctype="multipart/form-data">
           @csrf
           @method('GET')
@@ -46,6 +38,16 @@
             <input type="button" class="btn btn-danger btn-sm" value="Cancel Search">
           </a>
         </form><br>
+        <a href="{{url('/export')}}">
+          <button  class="btn btn-secondary float-end btn-sm mb-3">
+            <i class="fa fa-download"></i>Download
+          </button>
+        </a>  
+        <a href="{{url('/create')}}">
+          <button  class="btn btn-primary float-end btn-sm mb-3">
+            <i class="fa fa-plus"></i>Add
+          </button>
+        </a>  
         <h5>Students List</h5>
         @if(Session('successAlert'))
         <div class="alert alert-success alert-dismissible fade show">
@@ -63,6 +65,7 @@
               <th>DOB</th>
               <th>Address</th>
               <th>Major Name</th>
+              <th>Join Date</th>
               <th>Operations</th>
             </tr>
           </thead>
@@ -76,6 +79,7 @@
               <td>{{$student->dob}}</td>
               <td>{{$student->address}}</td>
               <td>{{$student->major_name}}</td>
+              <td>{{$student->created_at}}</td>
               <td>
                 <form action="{{url('destroy/'.$student->id)}}" method="post">
                   @csrf
@@ -101,7 +105,7 @@
   </div>    
   <!-- Bootstrap JavaScript -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </body>
 </html>
