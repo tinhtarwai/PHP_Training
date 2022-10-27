@@ -43,6 +43,7 @@ class StudentServices implements StudentServicesInterface
     $student = Student::find($id);
     return $student;
   }
+  
   public function updateStudent(Request $request, $id) {
     return $this->studentDao->updateStudent($request, $id);
   }

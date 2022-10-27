@@ -208,8 +208,13 @@ return [
     |
     */
 
-    'aliases' => Facade::defaultAliases()->merge([
-        // 'ExampleClass' => App\Example\ExampleClass::class,
-    ])->toArray(),
+    //'aliases' => Facade::defaultAliases()->merge([
+    //    // 'ExampleClass' => App\Example\ExampleClass::class,
+    //    'Validator' => Illuminate\Support\Facades\Validator::class,
+    //])->toArray(),
+    'aliases' => [
+        'Validator' => Illuminate\Support\Facades\Validator::class,
+
+    ],
 
 ];

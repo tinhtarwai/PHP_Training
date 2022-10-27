@@ -19,72 +19,55 @@ class StudentDao implements StudentDaoInterface
    * To show students list
    */
   public function showStudents() {
-     $studentsList = DB::table('students')
+    $students = DB::table('students')
                     ->join('majors', 'majors.id', '=', 'students.major_id')
-                    ->select('students.id','students.name', 'students.father_name','students.gender','students.dob','students.address','majors.major_name')
+                    ->select('students.id','students.name', 'students.father_name','students.gender','students.dob','students.address','majors.major_name', 'students.created_at')
             ->get();
-
-     return $studentsList;
+            return $students;  
   }
    /**
    * To save Student
    */
-  public function storeStudent(Request $request) {
-    $request->validate([
-      'name'=> 'required',
-      'father_name'=>'required',
-      'gender'=>'required',
-      'dob'=>'required',
-      'address'=>'required',
-      'major'=>'required',
-    ]);
-
-   $major = Major::select('id')->where('major_name','=', $request->major)->first();
-
+  public function storeStudent(Request $request) {    
+    $major = Major::select('id')->where('major_name','=', $request->major)->first();
+  
     DB::table('students') ->join('majors', 'majors.id', '=', 'students.major_id')
-    ->insert([
-      'name'=>$request->name,
-      'father_name'=>$request->father_name,
-      'gender'=>$request->gender,
-      'dob'=>$request->dob,
-      'address'=>$request->address,
-      'major_id'=> $major->id,
-      'created_at' => date('Y-m-d H:i:s'),
-      'updated_at' => date('Y-m-d H:i:s')
-    ]);
+                          ->insert([
+                            'name'=>$request->name,
+                            'father_name'=>$request->father_name,
+                            'gender'=>$request->gender,
+                            'dob'=>$request->dob,
+                            'address'=>$request->address,
+                            'major_id'=> $major->id,
+                            'created_at' => date('Y-m-d H:i:s'),
+                            'updated_at' => date('Y-m-d H:i:s')
+                          ]);
   }
    /**
-   * To delete Student by id
+   * To update Student by id
    */
-  public function updateStudent(Request $request, $id)
-  {
-    $request->validate([
-      'name'=> 'required',
-      'father_name'=>'required',
-      'gender'=>'required',
-      'dob'=>'required',
-      'address'=>'required',
-      //'major_id'=>,
-      'major'=>'required',
-    ]);
-
+  public function updateStudent(Request $request, $id) {
+      //$student = Student::find($id);
+      
     $major = Major::select('id')->where('major_name','=', $request->major)->first();
 
     DB::table('students') ->join('majors', 'majors.id', '=', 'students.major_id')
-    ->where('students.id' , $id)
-    ->update([
-      'name'=>$request->name,
-      'father_name'=>$request->father_name,
-      'gender'=>$request->gender,
-      'dob'=>$request->dob,
-      'address'=>$request->address,
-      'major_id'=>$major->id
-    ]);
+                          ->where('students.id' , $id)
+                          ->update([
+                            'students.name'=>$request->name,
+                            'students.father_name'=>$request->father_name,
+                            'students.gender'=>$request->gender,
+                            'students.dob'=>$request->dob,
+                            'students.address'=>$request->address,
+                            'students.major_id'=>$major->id,
+                            'students.updated_at' => date('Y-m-d H:i:s')
+                          ]); 
   }
    /**
    * To delete Student by id
    */
   public function deleteStudent($id) {
-    Student::find($id)->delete();
+    $student = Student::find($id);
+    return $student;    
   }
 }

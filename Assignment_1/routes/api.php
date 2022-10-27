@@ -2,6 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\StudentController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -17,3 +19,10 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/', [StudentController::class, 'index'])->name('index');
+Route::get('fetch-students', [StudentController::class, 'fetchstudent']);
+Route::post('/store', [StudentController::class, 'store']);
+Route::get('/edit/{id}', [StudentController::class, 'edit']);
+Route::post('/update/{id}', [StudentController::class, 'update']);
+Route::delete('/destroy/{id}', [StudentController::class, 'destroy']);

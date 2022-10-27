@@ -13,10 +13,11 @@ use App\Http\Controllers\StudentController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', [StudentController::class, 'index']);
-Route::get('/create', [StudentController::class, 'create']);
-Route::post('/store', [StudentController::class, 'store']);
-Route::get('/edit/{id}', [StudentController::class, 'edit']);
-Route::post('/update/{id}', [StudentController::class, 'update']);
-Route::delete('/destroy/{id}', [StudentController::class, 'destroy']);
+//
+//Route::get('/', [StudentController::class, 'index']);
+//Route::get('fetch-students', [StudentController::class, 'fetchstudent']);
+//Route::get('/create', [StudentController::class, 'create']);
+//Route::post('/store', [StudentController::class, 'store']);
+//Route::get('/edit/{id}', [StudentController::class, 'edit']);
+//Route::post('/update/{id}', [StudentController::class, 'update']);
+//Route::delete('/destroy/{id}', [StudentController::class, 'destroy']);
